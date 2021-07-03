@@ -9,10 +9,13 @@ import UIKit
 import Charts
 
 final class NormalBarChartView: UIView {
-
-    override init(frame: CGRect) {
+    
+    let model: BarChartModel
+    
+    init(frame: CGRect,model: BarChartModel) {
+        self.model = model
         super.init(frame: frame)
-        prepareUI()
+        self.prepareUI()
     }
     
     required init?(coder: NSCoder) {
@@ -48,10 +51,13 @@ final class NormalBarChartView: UIView {
             barChartView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ].compactMap { $0 })
         
-        let rawData: [Int] = [20, 50, 70, 30, 60, 90, 40]
-        let entries = rawData.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
+
+        let entries = model.dataPoints.map { BarChartDataEntry(x: $0.x, y: $0.y) }
         let dataSet = BarChartDataSet(entries: entries)
         let data = BarChartData(dataSet: dataSet)
+        barChartView.leftAxis.axisMaximum = 40.0
+        barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.leftAxis.labelCount = 5
         barChartView.data = data
     }
     
