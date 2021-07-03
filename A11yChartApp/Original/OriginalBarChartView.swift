@@ -5,6 +5,7 @@
 //  Created by 横山新 on 2021/07/03.
 //
 
+import Accessibility
 import UIKit
 import SwiftUI
 
@@ -96,6 +97,40 @@ extension OriginalBarChartView {
                 axElement.accessibilityFrameInContainerSpace = a11yFrames[index]
                 return axElement
             }
+        }
+        set {}
+    }
+}
+
+extension OriginalBarChartView: AXChart {
+    var accessibilityChartDescriptor: AXChartDescriptor? {
+        get {
+            let xAxis = AXNumericDataAxisDescriptor(title: model.xAxis.title,
+                                                    range: model.xAxis.range,
+                                                    gridlinePositions: [],
+                                                    valueDescriptionProvider: { value in
+                return "\(value) cups"
+            })
+            let yAxis = AXNumericDataAxisDescriptor(title: model.yAxis.title,
+                                                    range: model.yAxis.range,
+                                                    gridlinePositions: [],
+                                                    valueDescriptionProvider: { value in
+                return "\(value) lines of code"
+            })
+            let series = AXDataSeriesDescriptor(name: model.title,
+                                                isContinuous: false,
+                                                dataPoints: model.dataPoints.map { point in
+                AXDataPoint(x: point.x,
+                            y: point.y,
+                            additionalValues: [],
+                            label: point.name)
+            })
+            return AXChartDescriptor(title: model.title,
+                                     summary: model.summary,
+                                     xAxis: xAxis,
+                                     yAxis: yAxis,
+                                     additionalAxes: [],
+                                     series: [series])
         }
         set {}
     }

@@ -7,7 +7,15 @@
 
 struct BarChartModel {
     let title: String
+    let summary: String
+    let xAxis: Axis
+    let yAxis: Axis
     let dataPoints: [DataPoint]
+    
+    struct Axis {
+        let title: String
+        let range: ClosedRange<Double>
+    }
     
     struct DataPoint {
         let name: String
