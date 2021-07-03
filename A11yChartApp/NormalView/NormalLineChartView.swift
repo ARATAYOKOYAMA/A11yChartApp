@@ -5,14 +5,18 @@
 //  Created by 横山新 on 2021/07/03.
 //
 
+import Accessibility
 import UIKit
 import Charts
 
 final class NormalLineChartView: UIView {
+    
+    private let chartView = LineChartView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepareUI()
+//        NotificationCenter.default.addObserver(self, selector: #selector(doWhenEventOccur(_:)), name: NSNotification.Name(UIAccessibility.differentiateWithoutColorDidChangeNotification), object: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -20,24 +24,17 @@ final class NormalLineChartView: UIView {
     }
     
     private func prepareUI() {
-        let chartView = LineChartView()
         
         chartView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(chartView)
         
-        // X軸のラベルの位置を下に設定
         chartView.xAxis.labelPosition = .bottom
-        // X軸のラベルの色を設定
         chartView.xAxis.labelTextColor = .systemGray
-        // X軸の線、グリッドを非表示にする
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.xAxis.drawAxisLineEnabled = false
         chartView.rightAxis.enabled = false
-        // ラベルの色を設定
         chartView.leftAxis.labelTextColor = .systemGray
-        // グリッドの色を設定
         chartView.leftAxis.gridColor = .systemGray
-        // 軸線は非表示にする
         chartView.leftAxis.drawAxisLineEnabled = false
         chartView.legend.textColor = .systemGray
         
@@ -53,15 +50,31 @@ final class NormalLineChartView: UIView {
         ].compactMap { $0 })
         
         let sampleData = [1.7, 1.1, 0.8, 0.48]
-        let entries = sampleData.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
-        let dataSet = LineChartDataSet(entries: entries, label: "Tropical")
-        dataSet.colors = [.red]
-        
         let sampleData2 = [0.2, 0.17, 0.2, 0.15]
-        let entries2 = sampleData2.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
-        let dataSet2 = LineChartDataSet(entries: entries2, label: "Arid")
-        dataSet2.colors = [.green]
-        
-        chartView.data = LineChartData(dataSets: [dataSet, dataSet2])
+        if UIAccessibility.shouldDifferentiateWithoutColor {
+            let entries = sampleData.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element, icon: UIImage(systemName: "paperplane.fill")?.withTintColor(.green)) }
+            let dataSet = LineChartDataSet(entries: entries, label: "Tropical")
+            dataSet.colors = [.green]
+            dataSet.drawCirclesEnabled = false
+            
+            let entries2 = sampleData2.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element, icon: UIImage(systemName: "book.fill")?.withTintColor(.blue)) }
+            let dataSet2 = LineChartDataSet(entries: entries2, label: "Arid")
+            dataSet2.colors = [.blue]
+            dataSet2.drawCirclesEnabled = false
+            
+            chartView.data = LineChartData(dataSets: [dataSet, dataSet2])
+        } else {
+            let entries = sampleData.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
+            let dataSet = LineChartDataSet(entries: entries, label: "Tropical")
+            dataSet.colors = [.green]
+            dataSet.drawCirclesEnabled = false
+            
+            let entries2 = sampleData2.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
+            let dataSet2 = LineChartDataSet(entries: entries2, label: "Arid")
+            dataSet2.colors = [.blue]
+            dataSet2.drawCirclesEnabled = false
+            
+            chartView.data = LineChartData(dataSets: [dataSet, dataSet2])
+        }
     }
 }
