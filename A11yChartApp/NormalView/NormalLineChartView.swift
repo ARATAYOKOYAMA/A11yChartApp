@@ -55,13 +55,12 @@ final class NormalLineChartView: UIView {
         let sampleData = [1.7, 1.1, 0.8, 0.48]
         let entries = sampleData.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
         let dataSet = LineChartDataSet(entries: entries, label: "Tropical")
-        dataSet.colors = [.red.withAlphaComponent(0.7)]
-        dataSet.drawCirclesEnabled = false
+        dataSet.colors = [.red]
         
         let sampleData2 = [0.2, 0.17, 0.2, 0.15]
         let entries2 = sampleData2.enumerated().map { ChartDataEntry(x: Double($0.offset), y: $0.element) }
         let dataSet2 = LineChartDataSet(entries: entries2, label: "Arid")
-        dataSet2.colors = [.green.withAlphaComponent(0.7)]
+        dataSet2.colors = [.green]
         
         chartView.data = LineChartData(dataSets: [dataSet, dataSet2])
     }

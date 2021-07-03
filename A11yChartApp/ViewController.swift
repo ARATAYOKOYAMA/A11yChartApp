@@ -10,7 +10,7 @@ import UIKit
 final class ViewController: UIViewController {
     
     enum Const {
-        static let constant: CGFloat = 24.0
+        static let constant: CGFloat = 16.0
     }
     
     var dataPoints: [BarChartModel.DataPoint] {
@@ -21,12 +21,7 @@ final class ViewController: UIViewController {
                 .init(name: "boblabel", x: 4, y: 35),
                 .init(name: "boblabel", x: 5, y: 32),
                 .init(name: "boblabel", x: 6, y: 18),
-                .init(name: "boblabel", x: 7, y: 8),
-                .init(name: "boblabel", x: 8, y: 4),
-                .init(name: "boblabel", x: 9, y: 3),
-                .init(name: "boblabel", x: 10, y: 2),
-                .init(name: "boblabel", x: 11, y: 1),
-                .init(name: "boblabel", x: 12, y: 0)]
+                .init(name: "boblabel", x: 7, y: 8)]
     }
     
     override func viewDidLoad() {
@@ -34,9 +29,19 @@ final class ViewController: UIViewController {
         
         view.backgroundColor = .black
         
-        let model: BarChartModel = .init(title: "BOB", dataPoints: dataPoints)
-        let normalBarChartView = NormalBarChartView(frame: .infinite, model: model)
+        // BarChartView
+//        let model: BarChartModel = .init(title: "棒グラフ", dataPoints: dataPoints)
+//        let normalBarChartView = NormalBarChartView(frame: .infinite, model: model)
+//        normalBarChartView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // LineChartView
+        let normalBarChartView = NormalLineChartView()
         normalBarChartView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // OriginalBarChartView
+//        let model: BarChartModel = .init(title: "棒グラフ", dataPoints: dataPoints)
+//        let normalBarChartView = OriginalBarChartView(frame: .infinite, model: model)
+//        normalBarChartView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(normalBarChartView)
         
