@@ -16,7 +16,9 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let normalBarChartView = NormalBarChartView()
+        view.backgroundColor = .black
+        
+        let normalBarChartView = NormalLineChartView()
         normalBarChartView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(normalBarChartView)
