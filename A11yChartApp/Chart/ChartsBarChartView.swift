@@ -1,5 +1,5 @@
 //
-//  NormalBarChartView.swift
+//  ChartsBarChartView.swift
 //  A11yChartApp
 //
 //  Created by 横山新 on 2021/07/03.
@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-final class NormalBarChartView: UIView {
+final class ChartsBarChartView: UIView {
     
     let model: BarChartModel
     

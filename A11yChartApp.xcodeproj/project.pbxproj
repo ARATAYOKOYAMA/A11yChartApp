@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DF6F935F269012F400ABC7D0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = DF6F935E269012F400ABC7D0 /* Charts */; };
-		DF6F93622690178500ABC7D0 /* NormalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F93612690178500ABC7D0 /* NormalBarChartView.swift */; };
-		DF6F936426901D5500ABC7D0 /* NormalLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F936326901D5500ABC7D0 /* NormalLineChartView.swift */; };
+		DF6F93622690178500ABC7D0 /* ChartsBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F93612690178500ABC7D0 /* ChartsBarChartView.swift */; };
+		DF6F936426901D5500ABC7D0 /* ChartsLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F936326901D5500ABC7D0 /* ChartsLineChartView.swift */; };
 		DF6F93672690235200ABC7D0 /* BarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F93662690235200ABC7D0 /* BarChartModel.swift */; };
 		DF6F936A269035F200ABC7D0 /* OriginalBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F9369269035F200ABC7D0 /* OriginalBarChartView.swift */; };
-		DF6F9370269045EC00ABC7D0 /* OriginalBarChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF6F936F269045EC00ABC7D0 /* OriginalBarChartView.xib */; };
 		DF6F93722690497F00ABC7D0 /* OriginalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F93712690497F00ABC7D0 /* OriginalBar.swift */; };
+		DF6F93742691302900ABC7D0 /* GrapthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F93732691302900ABC7D0 /* GrapthView.swift */; };
 		DF86A48D26900A2C00931A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86A48C26900A2C00931A20 /* AppDelegate.swift */; };
 		DF86A48F26900A2C00931A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86A48E26900A2C00931A20 /* SceneDelegate.swift */; };
 		DF86A49126900A2C00931A20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF86A49026900A2C00931A20 /* ViewController.swift */; };
@@ -23,12 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF6F93612690178500ABC7D0 /* NormalBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalBarChartView.swift; sourceTree = "<group>"; };
-		DF6F936326901D5500ABC7D0 /* NormalLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalLineChartView.swift; sourceTree = "<group>"; };
+		DF6F93612690178500ABC7D0 /* ChartsBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsBarChartView.swift; sourceTree = "<group>"; };
+		DF6F936326901D5500ABC7D0 /* ChartsLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsLineChartView.swift; sourceTree = "<group>"; };
 		DF6F93662690235200ABC7D0 /* BarChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartModel.swift; sourceTree = "<group>"; };
 		DF6F9369269035F200ABC7D0 /* OriginalBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalBarChartView.swift; sourceTree = "<group>"; };
-		DF6F936F269045EC00ABC7D0 /* OriginalBarChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OriginalBarChartView.xib; sourceTree = "<group>"; };
 		DF6F93712690497F00ABC7D0 /* OriginalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalBar.swift; sourceTree = "<group>"; };
+		DF6F93732691302900ABC7D0 /* GrapthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapthView.swift; sourceTree = "<group>"; };
 		DF86A48926900A2C00931A20 /* A11yChartApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A11yChartApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF86A48C26900A2C00931A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF86A48E26900A2C00931A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,13 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF6F93602690176400ABC7D0 /* NormalView */ = {
+		DF6F93602690176400ABC7D0 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				DF6F93612690178500ABC7D0 /* NormalBarChartView.swift */,
-				DF6F936326901D5500ABC7D0 /* NormalLineChartView.swift */,
+				DF6F93612690178500ABC7D0 /* ChartsBarChartView.swift */,
+				DF6F936326901D5500ABC7D0 /* ChartsLineChartView.swift */,
 			);
-			path = NormalView;
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		DF6F93652690233600ABC7D0 /* Entity */ = {
@@ -71,11 +71,27 @@
 		DF6F9368269035D000ABC7D0 /* Original */ = {
 			isa = PBXGroup;
 			children = (
-				DF6F9369269035F200ABC7D0 /* OriginalBarChartView.swift */,
-				DF6F936F269045EC00ABC7D0 /* OriginalBarChartView.xib */,
-				DF6F93712690497F00ABC7D0 /* OriginalBar.swift */,
+				DF6F93762691477E00ABC7D0 /* SwiftUI */,
+				DF6F93752691477200ABC7D0 /* UIKit */,
 			);
 			path = Original;
+			sourceTree = "<group>";
+		};
+		DF6F93752691477200ABC7D0 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DF6F9369269035F200ABC7D0 /* OriginalBarChartView.swift */,
+				DF6F93712690497F00ABC7D0 /* OriginalBar.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		DF6F93762691477E00ABC7D0 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DF6F93732691302900ABC7D0 /* GrapthView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		DF86A48026900A2C00931A20 = {
@@ -99,7 +115,7 @@
 			children = (
 				DF6F9368269035D000ABC7D0 /* Original */,
 				DF6F93652690233600ABC7D0 /* Entity */,
-				DF6F93602690176400ABC7D0 /* NormalView */,
+				DF6F93602690176400ABC7D0 /* Chart */,
 				DF86A48C26900A2C00931A20 /* AppDelegate.swift */,
 				DF86A48E26900A2C00931A20 /* SceneDelegate.swift */,
 				DF86A49026900A2C00931A20 /* ViewController.swift */,
@@ -175,7 +191,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF6F9370269045EC00ABC7D0 /* OriginalBarChartView.xib in Resources */,
 				DF86A49926900A2D00931A20 /* LaunchScreen.storyboard in Resources */,
 				DF86A49626900A2D00931A20 /* Assets.xcassets in Resources */,
 				DF86A49426900A2C00931A20 /* Main.storyboard in Resources */,
@@ -191,10 +206,11 @@
 			files = (
 				DF86A49126900A2C00931A20 /* ViewController.swift in Sources */,
 				DF6F936A269035F200ABC7D0 /* OriginalBarChartView.swift in Sources */,
-				DF6F936426901D5500ABC7D0 /* NormalLineChartView.swift in Sources */,
+				DF6F936426901D5500ABC7D0 /* ChartsLineChartView.swift in Sources */,
 				DF86A48D26900A2C00931A20 /* AppDelegate.swift in Sources */,
-				DF6F93622690178500ABC7D0 /* NormalBarChartView.swift in Sources */,
+				DF6F93622690178500ABC7D0 /* ChartsBarChartView.swift in Sources */,
 				DF6F93672690235200ABC7D0 /* BarChartModel.swift in Sources */,
+				DF6F93742691302900ABC7D0 /* GrapthView.swift in Sources */,
 				DF6F93722690497F00ABC7D0 /* OriginalBar.swift in Sources */,
 				DF86A48F26900A2C00931A20 /* SceneDelegate.swift in Sources */,
 			);

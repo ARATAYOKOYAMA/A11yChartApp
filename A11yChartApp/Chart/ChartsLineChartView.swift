@@ -1,5 +1,5 @@
 //
-//  NormalLineChartView.swift
+//  ChartsLineChartView.swift
 //  A11yChartApp
 //
 //  Created by 横山新 on 2021/07/03.
@@ -9,7 +9,7 @@ import Accessibility
 import UIKit
 import Charts
 
-final class NormalLineChartView: UIView {
+final class ChartsLineChartView: UIView {
     
     private let chartView = LineChartView()
 

@@ -5,6 +5,8 @@
 //  Created by 横山新 on 2021/07/03.
 //
 
+import Foundation
+
 struct BarChartModel {
     let title: String
     let summary: String
@@ -17,9 +19,17 @@ struct BarChartModel {
         let range: ClosedRange<Double>
     }
     
-    struct DataPoint {
+    struct DataPoint: Identifiable {
+        let id: String
         let name: String
         let x: Double
         let y: Double
+        
+        public init(id: String = UUID().uuidString, name: String, x: Double, y: Double) {
+            self.id = id
+            self.name = name
+            self.x = x
+            self.y = y
+        }
     }
 }
