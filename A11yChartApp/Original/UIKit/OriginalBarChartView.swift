@@ -109,13 +109,13 @@ extension OriginalBarChartView: AXChart {
                                                     range: model.xAxis.range,
                                                     gridlinePositions: [],
                                                     valueDescriptionProvider: { value in
-                return "\(value) cups"
+                return "\(value)"
             })
             let yAxis = AXNumericDataAxisDescriptor(title: model.yAxis.title,
                                                     range: model.yAxis.range,
                                                     gridlinePositions: [],
                                                     valueDescriptionProvider: { value in
-                return "\(value) lines of code"
+                return "\(value) times"
             })
             let series = AXDataSeriesDescriptor(name: model.title,
                                                 isContinuous: false,
