@@ -32,7 +32,7 @@ final class ViewController: UIViewController {
                 .init(name: "August", x: 8, y: 8)]
     }
     
-    var viewType: ViewType = .barUIKitCharts
+    var viewType: ViewType = .barSwiftUICharts
     
     override func viewDidLoad() {
         super.viewDidLoad()

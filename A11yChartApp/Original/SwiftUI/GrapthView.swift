@@ -27,7 +27,12 @@ struct BarGrapthView: View {
                 
                 HStack() {
                     ForEach(model.dataPoints.indices, id: \.self) { index in
-                        GrapthView(point: model.dataPoints[index])
+                        if index == 0 {
+                            GrapthView(point: model.dataPoints[index])
+                                .accessibility(hidden: true)
+                        } else {
+                            GrapthView(point: model.dataPoints[index])
+                        }
                     }
                 }
                 .padding()
