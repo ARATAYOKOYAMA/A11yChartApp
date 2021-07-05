@@ -93,7 +93,7 @@ extension OriginalBarChartView {
         get {
             return model.dataPoints.enumerated().map { index, point in
                 let axElement = UIAccessibilityElement(accessibilityContainer: self)
-                axElement.accessibilityValue = "\(point.x) cups, \(point.y) lines of code"
+                axElement.accessibilityValue = "In \(point.name), \(point.y) times"
                 axElement.accessibilityFrameInContainerSpace = a11yFrames[index]
                 return axElement
             }
